@@ -1,0 +1,101 @@
+{
+  "name": "URL-Yukleyici",
+  "description": "URL'leri Telegram'a Dosya ve Video Olarak Yüklemek için Telegram Botu.",
+  "keywords": [
+    "telegram",
+    "best",
+    "youtube",
+    "downloader",
+    "open",
+    "source",
+    "multi",
+    "purpose",
+    "ffmpeg",
+    "remote",
+    "uploader"
+  ],
+  "logo": "https://telegra.ph/file/ad1d90498334a3b59789b.jpg",
+  "success_url": "https://t.me/tiranozorbot",
+  "website": "https://github.com/Turkce-Botlar-Sohbet",
+  "repository": "https://github.com/Turkce-Botlar-Sohbet/URL-Yukleyici",
+  "env": {
+    "WEBHOOK": {
+      "description": "Bunu ANYTHING ayarlamak, env modundayken web kancalarını etkinleştirir",
+      "value": "ANYTHING"
+    },
+    "TG_BOT_TOKEN": {
+      "description": "https://t.me/BotFather adresinden bir bot oluşturarak edinin.",
+      "value": ""
+    },
+    "APP_ID": {
+      "description": "https://my.telegram.org'da bir uygulama oluşturarak edinin.",
+      "value": ""
+    },
+    "API_HASH": {
+      "description": "https://my.telegram.org'da bir uygulama oluşturarak edinin.",
+      "value": ""
+    },
+    "OWNER_ID": {
+      "description": "Telegram ID numaranız",
+      "value": ""
+    },
+    "DATABASE_URL": {
+      "description": "MongoDB URI'niz",
+      "value": ""
+    },
+    "SESSION_NAME": {
+      "description": "Oturum Adınız: Örnek: urlyukleyici",
+      "value": ""
+    },
+    "BANNED_USERS": {
+      "description": "Yasaklanan İstenmeyen üyeler.",
+      "value": "",
+      "required": false
+    },
+    "UPDATE_CHANNEL": {
+      "description": "Zorla abone yapmak için kanalınızın kullanıcı adını yazın (@ olmadan).",
+      "value": "",
+      "required": false
+    },
+    "LOG_CHANNEL": {
+      "description": "Günlükler için Kanal ID - Telegram ID numaranız olabilir.",
+      "value": "",
+      "required": false
+    },
+    "DEF_THUMB_NAIL_VID_S": {
+      "description": "Videolarda kullanılacak varsayılan küçük fotoğraf.",
+      "value": "",
+      "required": false
+    },
+    "CHUNK_SIZE": {
+      "description": "İsteklerde kullanılması gereken yığın boyutu",
+      "value": "128"
+    },
+    "REFERER_URL": {
+      "description": "403 Hatası veren siteler için",
+      "value": ""
+    },
+    "REFERER": {
+      "description": "403 Hatası veren siteler için",
+      "value": ""
+    },
+    "HTTP_PROXY": {
+      "description": "Kısıtlı Alanlarda youtube-dl'ye erişmek için proxy. https://github.com/rg3/youtube-dl/issues/1091#issuecomment-230163061 adresinden kendi proxy'nizi alın",
+      "value": "",
+      "required": false
+    }
+  },
+  "addons": [
+  ],
+  "buildpacks": [{
+    "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest"
+  }, {
+    "url": "heroku/python"
+  }],
+  "formation": {
+    "worker": {
+      "quantity": 1,
+      "size": "free"
+    }
+  }
+}
